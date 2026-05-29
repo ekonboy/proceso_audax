@@ -249,6 +249,4 @@ Probar el endpoint de salud:
 http://localhost/proceso_audax/api/health.php
 ```
 
-## 📚 Nota de estudio
 
-El archivo `GUIA_ESTUDIO.md` explica el porqué técnico de las decisiones principales: PDO, SQLite, consultas preparadas, prevención de SQL injection, validación en backend, JSON, XSS, `localStorage`, endpoint de salud y mejoras de experiencia.
