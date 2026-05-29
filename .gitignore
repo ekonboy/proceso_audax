@@ -1,4 +1,5 @@
 data/*.sqlite
 data/*.sqlite-*
+!data/search_history.sqlite
 .vscode/
 rules.md
