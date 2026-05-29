@@ -90,6 +90,8 @@ El proyecto aplica principios habituales de desarrollo pragmático:
 - Servidor local como XAMPP, Apache, Laragon o el servidor integrado de PHP.
 - Conexión a internet para consultar Wikipedia y cargar SweetAlert2 desde CDN.
 
+El repositorio incluye una base SQLite vacía en `data/search_history.sqlite`, ya preparada con la tabla `searches`. La aplicación también puede crearla automáticamente si no existe.
+
 ## ⚙️ Instalación
 
 Coloca el proyecto dentro del directorio público del servidor. En XAMPP, por ejemplo:
@@ -229,7 +231,7 @@ La interfaz utiliza los assets propios del proyecto:
 └── README.md
 ```
 
-La carpeta `data` se crea automáticamente cuando se guarda o consulta el historial. El archivo SQLite no se sube al repositorio porque está incluido en `.gitignore`.
+La carpeta `data` incluye una base SQLite vacía y lista para funcionar. Los archivos temporales de SQLite, como `*.sqlite-wal` o `*.sqlite-shm`, siguen ignorados.
 
 ## 🧪 Comprobaciones rápidas
 
