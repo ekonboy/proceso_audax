@@ -1,0 +1,4 @@
+data/*.sqlite
+data/*.sqlite-*
+.vscode/
+rules.md
