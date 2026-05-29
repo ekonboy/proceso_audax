@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141c2b">
+  <title>Buscador de Wikipedia</title>
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <button id="technical-menu-button" class="technical-menu-button" type="button" aria-controls="technical-drawer" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span class="sr-only">Abrir explicación técnica</span>
+  </button>
+
+  <div id="drawer-overlay" class="drawer-overlay" hidden></div>
+  <aside id="technical-drawer" class="technical-drawer" aria-labelledby="technical-drawer-title" aria-hidden="true">
+    <div class="drawer-header">
+      <h2 id="technical-drawer-title">Cómo funciona</h2>
+      <button id="technical-menu-close" class="drawer-close" type="button">Cerrar</button>
+    </div>
+    <div id="technical-drawer-content" class="drawer-content">
+      <p>Cargando explicación técnica...</p>
+    </div>
+  </aside>
+
+  <main class="app">
+    <!-- Cabecera principal: presenta la marca y agrupa la búsqueda inicial. -->
+    <section class="search-panel" aria-labelledby="titulo-principal">
+      <div class="intro">
+        <img class="brand-logo" src="assets/logo/logo5.png" alt="GW">
+        <p class="eyebrow">Consulta rápida</p>
+        <h1 id="titulo-principal">Buscador de Wikipedia</h1>
+        <p>Introduce un término y consulta resultados de Wikipedia sin salir de esta página.</p>
+      </div>
+
+      <form id="search-form" class="search-form" autocomplete="off">
+        <label for="search-term">Término de búsqueda</label>
+        <div class="search-row">
+          <input
+            id="search-term"
+            name="search-term"
+            type="search"
+            minlength="2"
+            placeholder="Ejemplo: energía solar"
+            required
+          >
+          <button type="submit">Buscar</button>
+        </div>
+        <div class="search-options">
+          <label for="result-limit">Resultados</label>
+          <select id="result-limit" name="result-limit">
+            <option value="10">10 resultados</option>
+            <option value="20">20 resultados</option>
+            <option value="50">50 resultados</option>
+          </select>
+        </div>
+        <label class="exact-switch" for="exact-search">
+          <input id="exact-search" name="exact-search" type="checkbox">
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>Búsqueda exacta</span>
+        </label>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Resultados e historial viven en la misma pantalla para evitar navegación innecesaria. -->
+    <section class="content-grid">
+      <section class="results-section" aria-labelledby="resultados-titulo">
+        <div class="section-heading">
+          <h2 id="resultados-titulo">Resultados</h2>
+          <span id="results-count" class="counter">0</span>
+        </div>
+        <div id="results" class="results empty-state">
+          <p>Los resultados aparecerán aquí después de realizar una búsqueda.</p>
+        </div>
+      </section>
+
+      <aside class="history-section" aria-labelledby="historial-titulo">
+        <div class="section-heading history-heading">
+          <h2 id="historial-titulo">Historial</h2>
+        </div>
+        <div class="history-actions">
+          <button id="refresh-history" class="secondary-button" type="button">Actualizar</button>
+          <button id="clear-history" class="secondary-button danger-button" type="button">Limpiar</button>
+        </div>
+        <div id="health-status" class="health-status" role="status" aria-live="polite">
+          Comprobando sistema...
+        </div>
+        <ul id="history-list" class="history-list" aria-live="polite"></ul>
+      </aside>
+    </section>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Gabii Rese</strong>
+        <span>Desarrollador web</span>
+      </div>
+      <nav aria-label="Enlaces del autor">
+        <a href="https://vistarapida.es" target="_blank" rel="noopener noreferrer">Portfolio</a>
+        <a href="https://github.com/ekonboy" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabiirese/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </footer>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" type="button" hidden>Subir</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
